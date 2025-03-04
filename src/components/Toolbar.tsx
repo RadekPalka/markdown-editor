@@ -9,9 +9,9 @@ import { textareaRef, markdownText } from './MarkdownEditor';
 import { useSignals } from '@preact/signals-react/runtime';
 
 export const Toolbar: React.FC = () => {
-	const boldItalicRegex = /^(\*\*\*|___)(.*?)\1$/;
+	// const boldItalicRegex = /^(\*\*\*|___)(.*?)\1$/;
 	const boldRegex = /^(\*\*|__)(.*?)\1$/;
-	const italicRegex = /^(\*|_)(.*?)\1$/;
+	// const italicRegex = /^(\*|_)(.*?)\1$/;
 
 	useSignals();
 	const toggleBold = () => {

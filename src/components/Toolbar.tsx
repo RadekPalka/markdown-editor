@@ -5,7 +5,7 @@ import {
 	faItalic,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { markdownText, selectedText } from './MarkdownEditor';
+import { markdownText, selectedText } from '../signals';
 
 export const Toolbar: React.FC = () => {
 	// const boldItalicRegex = /^(\*\*\*|___)(.*?)\1$/;

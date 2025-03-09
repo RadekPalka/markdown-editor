@@ -9,7 +9,7 @@ import { markdownText } from '../signals';
 
 export const MarkDownPreview: React.FC = () => {
 	return (
-		<div className='editor-preview-style'>
+		<div className='editor-preview-style hidden md:block'>
 			<Markdown
 				remarkPlugins={[remarkGfm, remarkMath]}
 				rehypePlugins={[rehypeRaw, rehypeKatex]}

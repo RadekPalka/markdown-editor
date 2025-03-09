@@ -1,5 +1,6 @@
 import {
 	faBold,
+	faEye,
 	faFileUpload,
 	faFloppyDisk,
 	faItalic,
@@ -58,7 +59,7 @@ export const Toolbar: React.FC = () => {
 	};
 
 	return (
-		<div className='flex gap-6 bg-black py-4 px-4 w-full h-auto'>
+		<div className='flex gap-6 bg-black py-4 px-4 w-full h-12'>
 			<FontAwesomeIcon
 				icon={faBold}
 				color='white'
@@ -86,6 +87,9 @@ export const Toolbar: React.FC = () => {
 				className='hidden'
 				onChange={loadMarkdownFile}
 			/>
+			<div className='md:hidden'>
+				<FontAwesomeIcon icon={faEye} color='white' className='cursor-pointer' />
+			</div>
 		</div>
 	);
 };

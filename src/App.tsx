@@ -4,7 +4,7 @@ import { Toolbar } from './components/Toolbar';
 
 function App() {
 	return (
-		<div className='min-h-screen flex w-screen flex-wrap'>
+		<div className='min-h-screen md:flex block w-screen flex-wrap h-full'>
 			<Toolbar />
 			<MarkdownEditor />
 			<MarkDownPreview />

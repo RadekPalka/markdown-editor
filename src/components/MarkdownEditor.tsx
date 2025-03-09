@@ -14,7 +14,7 @@ export const MarkdownEditor: React.FC = () => {
 
 	return (
 		<textarea
-			className='editor-preview-style'
+			className='editor-preview-style block'
 			onChange={(e) => {
 				markdownText.value = e.target.value;
 			}}

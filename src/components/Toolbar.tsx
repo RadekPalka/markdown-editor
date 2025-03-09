@@ -5,8 +5,8 @@ import {
 	faItalic,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { textareaRef, markdownText } from './MarkdownEditor';
 import { useSignals } from '@preact/signals-react/runtime';
+import { markdownText, selectedText } from './MarkdownEditor';
 
 export const Toolbar: React.FC = () => {
 	// const boldItalicRegex = /^(\*\*\*|___)(.*?)\1$/;
@@ -15,24 +15,20 @@ export const Toolbar: React.FC = () => {
 
 	useSignals();
 	const toggleBold = () => {
-		const textArea = textareaRef.value;
+		const text = selectedText.value.text;
 
-		if (!textArea) return;
 		let newText: string;
-		const startIndex = textArea.selectionStart;
-		const endIndex = textArea.selectionEnd;
-		const selectedText = textArea.value.substring(startIndex, endIndex);
 
-		if (boldRegex.test(selectedText)) {
-			newText = selectedText.slice(2, selectedText.length - 2);
+		if (boldRegex.test(selectedText.value.text)) {
+			newText = text.slice(2, text.length - 2);
 		} else {
-			newText = `**${selectedText}**`;
+			newText = `**${text}**`;
 		}
 		const updatedMarkdownText =
-			markdownText.value.slice(0, startIndex) +
+			markdownText.value.slice(0, selectedText.value.startIndex) +
 			newText +
-			markdownText.value.slice(endIndex);
-		markdownText.value = updatedMarkdownText;
+			markdownText.value.slice(selectedText.value.endIndex);
+		markdownText.value = updatedMarkdownText.trim();
 	};
 
 	const saveAsMarkdown = () => {

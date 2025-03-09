@@ -1,5 +1,4 @@
 import Markdown from 'react-markdown';
-import { useSignals } from '@preact/signals-react/runtime';
 import remarkGfm from 'remark-gfm';
 import remarkMath from 'remark-math';
 import rehypeRaw from 'rehype-raw';
@@ -9,7 +8,6 @@ import 'katex/dist/katex.min.css';
 import { markdownText } from './MarkdownEditor';
 
 export const MarkDownPreview: React.FC = () => {
-	useSignals();
 	return (
 		<div className='editor-preview-style'>
 			<Markdown

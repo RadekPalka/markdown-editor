@@ -5,7 +5,6 @@ import {
 	faItalic,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useSignals } from '@preact/signals-react/runtime';
 import { markdownText, selectedText } from './MarkdownEditor';
 
 export const Toolbar: React.FC = () => {
@@ -13,7 +12,6 @@ export const Toolbar: React.FC = () => {
 	const boldRegex = /^(\*\*|__)(.*?)\1$/;
 	// const italicRegex = /^(\*|_)(.*?)\1$/;
 
-	useSignals();
 	const toggleBold = () => {
 		const text = selectedText.value.text;
 
